@@ -1,0 +1,161 @@
+Script started on 2022-09-28 00:04:22-04:00
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ history -c
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ history
+    1  history
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ alias l="ls -latr"
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ l
+total 3162800
+-rw-rw-r--  1 rishabh rishabh 3238702530 Sep  5 17:39 amazon_reviews_us_Books_v1_02.tsv
+drwx------ 12 rishabh rishabh       4096 Sep 28 00:04 [0m[38;5;33m..[0m
+-rw-rw-r--  1 rishabh rishabh          0 Sep 28 00:04 ws4.txt
+drwxrwxr-x  2 rishabh rishabh         62 Sep 28 00:04 [38;5;33m.[0m
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ alias w="ls -la | wc"
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ w
+      5      38     277
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ mkdir CUSTOMERS
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ mkdir PRODUCTS
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ cut -f 2,9 *.tsv | head -n 5
+customer_id	helpful_votes
+12076615	2
+12703090	5
+12257412	1
+50732546	2
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ grep 12076615 *.tsv | cut -f 9 > CUSTOMERS/12076615.txt
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ grep 12703090 *.tsv | cut -f 9 > CUSTOMERS/12703090.txt
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ grep 12257412 *.tsv | cut -f 9 > CUSTOMERS/12257412.txt
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ cut -f 4,9 *.tsv | head -n 5
+product_id	helpful_votes
+0385730586	2
+0811828964	5
+1844161560	1
+0373836635	2
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ grep 0385730586 *.tsv | cut -f 9 > PRODUCTS/0385730586.txt
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ grep 0811828964 *.tsv | cut -f 9 > PRODUCTS/0811828964.txt
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ grep 1844161560  *.tsv | cut -f 9 > PRODUCTS/1844161560.txt
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ ls -l [K[K[K[K[K[Kl
+total 3162800
+-rw-rw-r--  1 rishabh rishabh 3238702530 Sep  5 17:39 amazon_reviews_us_Books_v1_02.tsv
+drwx------ 12 rishabh rishabh       4096 Sep 28 00:04 [0m[38;5;33m..[0m
+-rw-rw-r--  1 rishabh rishabh          0 Sep 28 00:04 ws4.txt
+drwxrwxr-x  4 rishabh rishabh         95 Sep 28 00:05 [38;5;33m.[0m
+drwxrwxr-x  2 rishabh rishabh         66 Sep 28 00:06 [38;5;33mCUSTOMERS[0m
+drwxrwxr-x  2 rishabh rishabh         72 Sep 28 00:06 [38;5;33mPRODUCTS[0m
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ l C* P*
+CUSTOMERS:
+total 12
+drwxrwxr-x 4 rishabh rishabh 95 Sep 28 00:05 [0m[38;5;33m..[0m
+-rw-rw-r-- 1 rishabh rishabh  2 Sep 28 00:05 12076615.txt
+-rw-rw-r-- 1 rishabh rishabh  2 Sep 28 00:05 12703090.txt
+drwxrwxr-x 2 rishabh rishabh 66 Sep 28 00:06 [38;5;33m.[0m
+-rw-rw-r-- 1 rishabh rishabh  2 Sep 28 00:06 12257412.txt
+
+PRODUCTS:
+total 12
+drwxrwxr-x 4 rishabh rishabh  95 Sep 28 00:05 [38;5;33m..[0m
+-rw-rw-r-- 1 rishabh rishabh 619 Sep 28 00:06 0385730586.txt
+-rw-rw-r-- 1 rishabh rishabh 151 Sep 28 00:06 0811828964.txt
+drwxrwxr-x 2 rishabh rishabh  72 Sep 28 00:06 [38;5;33m.[0m
+-rw-rw-r-- 1 rishabh rishabh  26 Sep 28 00:06 1844161560.txt
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ cd CUST*
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ paste -sd+ 12076615.txt | bc
+2
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ wc -l 12076615.txt
+1 12076615.txt
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ echo " average is 2"
+ average is 2
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ paste -sd+ 12703090.txt | bc
+5
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ wc -l 12703090.txt
+1 12703090.txt
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ echo "average is 5"
+average is 5
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ paste -sd+ 12257412.txt | bc
+1
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ wc -l [K[K[K[K[K[Kwc -l 12257412.txt
+1 12257412.txt
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ echo "average is 1"
+average is 1
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ 
+]0;rishabh@sjsu:~/ws4/CUSTOMERS[rishabh@sjsu CUSTOMERS]$ cd ..
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ cd PROD*
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ l
+total 12
+drwxrwxr-x 4 rishabh rishabh  95 Sep 28 00:05 [0m[38;5;33m..[0m
+-rw-rw-r-- 1 rishabh rishabh 619 Sep 28 00:06 0385730586.txt
+-rw-rw-r-- 1 rishabh rishabh 151 Sep 28 00:06 0811828964.txt
+drwxrwxr-x 2 rishabh rishabh  72 Sep 28 00:06 [38;5;33m.[0m
+-rw-rw-r-- 1 rishabh rishabh  26 Sep 28 00:06 1844161560.txt
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ paste -sd+ 0385730586.txt | bc
+568
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ wc -l 0385730586.txt
+304 0385730586.txt
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ echo 568/304 | bc -l
+1.86842105263157894736
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ echo "average is 1.868"
+average is 1.868
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ paste -sd+ 0811828964.txt | bc
+263
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ wc -l 0811828964.txt
+73 0811828964.txt
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ echo 263/73 | bc -l
+3.60273972602739726027
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ echo "average is 3.602"
+average is 3.602
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ paste -sd+ 1844161560.txt | bc
+207
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ wc -l 1844161560.txt
+10 1844161560.txt
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ echo 207/10 | bc -l
+20.70000000000000000000
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ echo "average is 20.7"
+average is 20.7
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ history > cmds.log
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ mv cmds.log ..
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ 
+]0;rishabh@sjsu:~/ws4/PRODUCTS[rishabh@sjsu PRODUCTS]$ cd ..
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ 
+]0;rishabh@sjsu:~/ws4[rishabh@sjsu ws4]$ exit
+
+Script done on 2022-09-28 00:14:11-04:00

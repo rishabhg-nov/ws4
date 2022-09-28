@@ -1,0 +1,8 @@
+Question: 
+Do you think the mean helpfulness value may differ significantly between 
+different  customers or products?
+
+Answer: 
+Yes. Different Customers could write very different reviews making their 
+helpfulness votes very different. Also, one product could get very useful
+reviews while another product gets less useful reviews.

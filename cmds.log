@@ -1,0 +1,43 @@
+    1  history
+    2  alias l="ls -latr"
+    3  l
+    4  alias w="ls -la | wc"
+    5  w
+    6  mkdir CUSTOMERS
+    7  mkdir PRODUCTS
+    8  cut -f 2,9 *.tsv | head -n 5
+    9  grep 12076615 *.tsv | cut -f 9 > CUSTOMERS/12076615.txt
+   10  grep 12703090 *.tsv | cut -f 9 > CUSTOMERS/12703090.txt
+   11  grep 12257412 *.tsv | cut -f 9 > CUSTOMERS/12257412.txt
+   12  cut -f 4,9 *.tsv | head -n 5
+   13  grep 0385730586 *.tsv | cut -f 9 > PRODUCTS/0385730586.txt
+   14  grep 0811828964 *.tsv | cut -f 9 > PRODUCTS/0811828964.txt
+   15  grep 1844161560  *.tsv | cut -f 9 > PRODUCTS/1844161560.txt
+   16  l
+   17  l C* P*
+   18  cd CUST*
+   19  paste -sd+ 12076615.txt | bc
+   20  wc -l 12076615.txt
+   21  echo " average is 2"
+   22  paste -sd+ 12703090.txt | bc
+   23  wc -l 12703090.txt
+   24  echo "average is 5"
+   25  paste -sd+ 12257412.txt | bc
+   26  wc -l 12257412.txt
+   27  echo "average is 1"
+   28  cd ..
+   29  cd PROD*
+   30  l
+   31  paste -sd+ 0385730586.txt | bc
+   32  wc -l 0385730586.txt
+   33  echo 568/304 | bc -l
+   34  echo "average is 1.868"
+   35  paste -sd+ 0811828964.txt | bc
+   36  wc -l 0811828964.txt
+   37  echo 263/73 | bc -l
+   38  echo "average is 3.602"
+   39  paste -sd+ 1844161560.txt | bc
+   40  wc -l 1844161560.txt
+   41  echo 207/10 | bc -l
+   42  echo "average is 20.7"
+   43  history > cmds.log
